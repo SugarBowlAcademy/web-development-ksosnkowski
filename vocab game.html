@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="DOM.css">
+    <title></title>
+  </head>
+  <body id="nothing">
+    <button onClick="myFunction1()" class="button">Correct</button>
+    <button onClick="myFunction2()" class="button">Incorrect</button>
+
+    <script>
+
+    function myFunction1() {
+      document.getElementById("nothing").className = "correct";
+    }
+    function myFunction2() {
+    document.getElementById("nothing").className = "incorrect";
+    }
+
+  </script>
+  </body>
+</html>
