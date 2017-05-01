@@ -1,29 +1,44 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Grocery list</title>
-  </head>
-  <body>
-    <h1>Grocery List</h1>
-    <p></p>
-    <input id ='text' type="text" name="">
-    <button onclick='addEl()'>Enter</button>
-    <p></p>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GroceryList</title>
+    <link rel="stylesheet" href="grocery.css" type="text/css" />
+</head>
+<body>
+ <h1>Groceries</h1>
+  <input id="Groceries"></input>
+  <button id="button">Submit</button>
+ <p id="butter" >butter</p>
 
-    <script>
-   function addEl(){
-          var y = document.getElementById('text').value;
-          const newEl = document.createElement('p');
-          const newText = document.createTextNode(y);
-          newEl.appendChild(newText);
-          const position = document.getElementsByTagName('body')[0];
-          position.appendChild(newEl);
-        }
+<script>
 
+ function add(){
+  var text = document.createElement("p");
+  var bad = document.getElementById("Groceries").value;
+  var newText = document.createTextNode(bad);
+  text.appendChild(newText);
+  const main = document.getElementsByTagName("body")[0];
+  main.appendChild(text);
+  document.getElementById("Groceries").value = "";
+}
+var element=document.getElementById('button');
+// element.onclick=add;
+element.addEventListener('click',add,false);
 
+function change(){
+ document.getElementById('butter').className='highlight';
 
-      
-    </script>
-  </body>
+}
+ var element=document.getElementById('butter');
+  element.addEventListener('mouseover',change,false);
+
+ function undo() {
+  document.getElementById('butter').className='';
+}
+ var move=document.getElementById('butter');
+  move.addEventListener('mouseout',undo,false);
+
+ </script>
+</body>
 </html>
